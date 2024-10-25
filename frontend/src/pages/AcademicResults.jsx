@@ -16,7 +16,7 @@ const AcademicResults = () => {
   const fetchdata = async (htno) => {
     setLoading(true); //start loading
     try {
-      const response = await fetch(`${url}/proxy?htno=${htno}`);
+      const response = await fetch(`${url}/proxy?htno=${htno}`,{mode: 'no-cors'});
       const result = await response.json();
       setData(result);
       
