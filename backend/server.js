@@ -5,7 +5,7 @@ const app = express();
 const port = 5000;
 
 //app.use(cors());
-app.use(cors({ origin: "https://my-results.vercel.app" })); // replace with '*' to allow all origins
+app.use(cors({ origin: "*" })); // replace with '*' to allow all origins
 
 app.get('/proxy', async(req, res) => {
     const htno = req.query.htno;
