@@ -4,7 +4,7 @@ const AcademicResults = () => {
   const [htno, setHtno] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const url = "https://my-results-backend.vercel.app/";
+  const url = "https://my-results-backend.vercel.app";
 
 
 
