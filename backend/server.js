@@ -25,16 +25,18 @@ app.get('/proxy', async(req, res) => {
     }
 })
 
+// Root endpoint to check if the API is working
 app.get('/', (req, res) => {
-    res.send('Api is working')
-})
+  res.send('API is working');
+});
 
+// Content Security Policy middleware
 app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com;");
-    next();
-  });
-  
+  res.setHeader("Content-Security-Policy", "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com;");
+  next();
+});
 
+// Start the server
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Server is running on http://localhost:${port}`);
+});
