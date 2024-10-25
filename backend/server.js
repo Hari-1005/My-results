@@ -4,7 +4,8 @@ import cors from 'cors';
 const app = express();
 const port = 5000;
 
-app.use(cors({ origin: "http://localhost:5173" })); // replace with '*' to allow all origins
+app.use(cors());
+//app.use(cors({ origin: "http://localhost:5173" })); // replace with '*' to allow all origins
 
 app.get('/proxy', async(req, res) => {
     const htno = req.query.htno;
