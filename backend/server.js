@@ -4,8 +4,12 @@ import cors from 'cors';
 const app = express();
 const port = 5000;
 
-//app.use(cors());
-app.use(cors({ origin: "*" })); // replace with '*' to allow all origins
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://my-results.vercel.app'); // Replace with your frontend URL
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.get('/proxy', async(req, res) => {
     const htno = req.query.htno;
