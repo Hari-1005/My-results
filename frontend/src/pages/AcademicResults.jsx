@@ -30,7 +30,7 @@ const AcademicResults = () => {
   return (
     <div>
       {/* Input Section */}
-      <div className='border bg-stone-100 border-none flex gap-1 flex-col items-center justify-center py-5 mb-7 shadow'>
+      <div className='border bg-stone-100 border-none flex gap-1 flex-col items-center w-[100] justify-center py-5 mb-7 shadow'>
         <h2 className='font-semibold text-2xl'>Academic results</h2>
         <input
           className='px-4 py-1 m-3 border border-black drop-shadow-sm text-center'
@@ -57,16 +57,16 @@ const AcademicResults = () => {
   
       {/* Academic Results Table */}
       {data === null ? '' : (
-        <div>
+        <div className='flex flex-col text-[30%]  sm:text-[45%]  md:text-[60%] lg:text-[100%]'>
           {/* Student Details */}
-          <table className='w-full mb-5'>
+          <table className='w-[100%] mb-5'>
             <thead>
-              <tr className='border border-b-gray-400 bg-stone-300'>
+              <tr className='border w-max border-b-gray-400 bg-stone-300'>
                 {Object.keys(data.Details).map((key, idx) => (
                   <th key={idx} className='border border-b-gray-400 p-2'>{key}</th>
                 ))}
               </tr>
-              <tr className='border border-b-gray-400'>
+              <tr className='border w-max border-b-gray-400'>
                 {Object.values(data.Details).map((value, index) => (
                   <th key={index} className='border border-b-gray-400 p-2'>{value}</th>
                 ))}
@@ -91,14 +91,14 @@ const AcademicResults = () => {
                   {/* Subjects Table */}
                   <table className='w-full'>
                     <thead>
-                      <tr className='border border-b-gray-400 text-[16px]'>
+                      <tr className='border border-b-gray-400'>
                         <th className='p-1 border border-collapse'>SUBJECT_CODE</th>
-                        <th className='p-1'>SUBJECT_NAME</th>
-                        <th className='p-1'>INTERNAL</th>
-                        <th className='p-1'>EXTERNAL</th>
-                        <th className='p-1'>TOTAL</th>
-                        <th className='p-1'>GRADE</th>
-                        <th className='p-1'>CREDITS</th>
+                        <th className='p-1 border border-collapse'>SUBJECT_NAME</th>
+                        <th className='p-1 border border-collapse'>INTERNAL</th>
+                        <th className='p-1 border border-collapse'>EXTERNAL</th>
+                        <th className='p-1 border border-collapse'>TOTAL</th>
+                        <th className='p-1 border border-collapse'>GRADE</th>
+                        <th className='p-1 border border-collapse'>CREDITS</th>
                       </tr>
                     </thead>
                     <tbody>
